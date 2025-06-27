@@ -1,7 +1,7 @@
-image_base_url=https://api.nasa.gov/planetary/apod?api_key
+image_base_url="https://api.nasa.gov/planetary/apod?api_key"
 
 def get_image():
-  try:
+    try:
         response = requests.get(f"{image_base_url}={os.environ.NASA_SECRET}" )
         if response.status_code == 200:
             hdurl = response.json().get("hdurl")
@@ -12,4 +12,3 @@ def get_image():
         print(str(e))
 
 get_image()
-  
