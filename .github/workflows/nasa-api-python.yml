@@ -15,7 +15,7 @@ jobs:
         run: mkdir -p out
 
       - name: run py
-        run: python ./get-nasa-image.py
+        run: python get-nasa-image.py
         env:
           NASA_SECRET: ${{ secrets.NASA_SECRET }}
 
