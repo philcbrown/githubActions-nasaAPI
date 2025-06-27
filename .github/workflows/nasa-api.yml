@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: echo
         run: echo "echo"
+
+      - name: make output dir
+        run: mkdir -p out
     
       - name: Call API
         run: curl https://api.nasa.gov/planetary/apod?api_key=${{ secrets.DEMO_KEY }} -o out/output.json
