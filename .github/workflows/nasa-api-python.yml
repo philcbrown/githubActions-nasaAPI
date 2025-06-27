@@ -1,4 +1,4 @@
-name: NASA API Call
+name: NASA API Call - PY
 
 on:
   workflow_dispatch:
