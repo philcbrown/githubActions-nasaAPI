@@ -1,0 +1,19 @@
+name: NASA API Call
+
+on:
+  workflow_dispatch:
+
+jobs:
+  nassa-api-call:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: make output dir
+        run: mkdir -p out
+
+      - name: Upload output.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: json-and-img
+          path: out/**
