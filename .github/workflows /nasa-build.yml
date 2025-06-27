@@ -1,9 +1,9 @@
 name: NASA API Call
 
 on:
-  # push:
-  #   paths:
-  #     - '**' 
+  push:
+    paths:
+      - '**' 
   workflow_dispatch:
 
 jobs:
