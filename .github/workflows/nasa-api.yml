@@ -23,12 +23,5 @@ jobs:
       - name: Upload output.json
         uses: actions/upload-artifact@v4
         with:
-          name: output-json
+          name: json-and-img
           path: out/**
-
-      # - name: Upload output.json
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: output-jpg
-      #     path: nasa.jpg
-      
