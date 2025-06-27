@@ -12,6 +12,11 @@ jobs:
       - name: make output dir
         run: mkdir -p out
 
+      - name: run py
+        run: python get-nasa-image.py
+        env:
+          NASA_SECRET: ${{ secrets.NASA_SECRET }}
+
       - name: Upload output.json
         uses: actions/upload-artifact@v4
         with:
