@@ -11,6 +11,9 @@ jobs:
       - name: run py
         run: python -V
 
+      - name: pip install
+        run: pip install requests 
+
       - name: make output dir
         run: mkdir -p out
 
