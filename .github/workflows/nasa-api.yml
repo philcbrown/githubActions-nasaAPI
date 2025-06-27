@@ -15,7 +15,7 @@ jobs:
         run: mkdir -p out
     
       - name: Call API
-        run: curl https://api.nasa.gov/planetary/apod?api_key=${{ secrets.DEMO_KEY }} -o out/output.json
+        run: curl https://api.nasa.gov/planetary/apod?api_key=${{ secrets.NASA_SECRET }} -o out/output.json
 
       - name: get image 
         run: hdurl=$(jq -r '.hdurl' out/output.json) && curl $hdurl -o out/nasa.jpg
