@@ -8,19 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: echo
-        run: echo "echo"
-
-      - name: make output dir
+      - name: Create out folder
         run: mkdir -p out
     
       - name: Call API
         run: curl https://api.nasa.gov/planetary/apod?api_key=${{ secrets.NASA_SECRET }} -o out/output.json
 
-      - name: get image 
+      - name: Get image 
         run: hdurl=$(jq -r '.hdurl' out/output.json) && curl $hdurl -o out/nasa.jpg
 
-      - name: Upload output.json
+      - name: Upload out folder
         uses: actions/upload-artifact@v4
         with:
           name: json-and-img
