@@ -14,9 +14,18 @@ jobs:
       - name: Call API
         run: curl https://api.nasa.gov/planetary/apod?api_key=${{ secrets.DEMO_KEY }} -o output.json
 
+      - name: get image 
+        run: hdurl=$(jq -r '.hdurl' output.json) && curl $hdurl -o nasa.jpg
+
       - name: Upload output.json
         uses: actions/upload-artifact@v4
         with:
           name: output-json
           path: output.json
+
+      - name: Upload output.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-jpg
+          path: nasa.jpg
       
